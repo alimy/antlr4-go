@@ -236,7 +236,7 @@ func (t *RangeTransition) Matches(symbol, minVocabSymbol, maxVocabSymbol int) bo
 }
 
 func (t *RangeTransition) String() string {
-	return "'" + string(t.start) + "'..'" + string(t.stop) + "'"
+	return fmt.Sprintf(`'%d'..'%d'`, t.start, t.stop)
 }
 
 type AbstractPredicateTransition interface {

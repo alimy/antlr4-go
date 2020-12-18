@@ -5,6 +5,7 @@
 package antlr
 
 import (
+	"fmt"
 	"strconv"
 	"strings"
 )
@@ -232,10 +233,10 @@ func (i *IntervalSet) toCharString() string {
 			if v.Start == TokenEOF {
 				names = append(names, "<EOF>")
 			} else {
-				names = append(names, ("'" + string(v.Start) + "'"))
+				names = append(names, fmt.Sprintf(`'%d'`, v.Start))
 			}
 		} else {
-			names = append(names, "'"+string(v.Start)+"'..'"+string(v.Stop-1)+"'")
+			names = append(names, fmt.Sprintf(`'%d'..'%d'`, v.Start, v.Stop-1))
 		}
 	}
 	if len(names) > 1 {

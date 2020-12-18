@@ -112,7 +112,7 @@ func NewLexerDFASerializer(dfa *DFA) *LexerDFASerializer {
 }
 
 func (l *LexerDFASerializer) getEdgeLabel(i int) string {
-	return "'" + string(i) + "'"
+	return fmt.Sprintf(`'%d'`, i)
 }
 
 func (l *LexerDFASerializer) String() string {
