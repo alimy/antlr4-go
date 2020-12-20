@@ -2,7 +2,7 @@
 // Use of this file is governed by the BSD 3-clause license that
 // can be found in the LICENSE.txt file in the project root.
 
-package main
+package internal
 
 import (
 	_ "embed"
@@ -43,8 +43,9 @@ func writeAntlrJar(dstPath string, fileName string, force bool) error {
 			} else {
 				path = dstPath
 			}
+		} else {
+			return err
 		}
-		return err
 	}
 
 	filePath := filepath.Join(path, fileName)

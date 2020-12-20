@@ -13,4 +13,4 @@
 *.swp
 
 release
-./antlr4
+antlr4
